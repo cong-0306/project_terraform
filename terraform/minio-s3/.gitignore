@@ -1,0 +1,8 @@
+# Terraform (절대 Git에 올리면 안 됨)
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# 변수파일(민감정보 들어갈 수 있음) - 필요하면 제외
+terraform.tfvars

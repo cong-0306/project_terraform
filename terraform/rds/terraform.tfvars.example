@@ -1,0 +1,53 @@
+############################
+# Region Settings
+############################
+primary_region = "ap-northeast-2"
+dr_region      = "ap-southeast-1"
+
+############################
+# Networking
+############################
+vpc_id = "vpc-xxxxxxxx"
+
+db_subnet_ids = [
+  "subnet-rosa_private_subnet_ida",
+  "subnet-rosa_private_subnet_idc"
+]
+
+############################
+# RDS Settigns
+############################
+rosa_node_sg_id = "sg-xxxxxxxxxxx"
+
+db_identifier = "rosa-main-rds"
+db_name       = "app_db"
+db_username   = "postgres"
+db_password   = "postgres"
+
+engine_version    = "15.15"
+instance_class    = "db.t3.micro"
+allocated_storage = 20
+
+############################
+# Backup & DR
+############################
+backup_retention_period   = 1
+backup_replication_region = "ap-southeast-1"
+
+replica_identifier     = "rosa-main-rds-replica"
+replica_instance_class = "db.t3.micro"
+
+############################
+# Availability
+############################
+publicly_accessible = false
+multi_az            = false
+
+############################
+# Tags
+############################
+tags = {
+  Project = "rosa"
+  Env     = "dev"
+  Service = "database"
+}
